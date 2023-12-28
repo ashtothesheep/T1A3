@@ -82,6 +82,7 @@ def enter_pattern():
 
         df.to_csv("docs/Patterns.csv", index=False)
         
+    
     except FileNotFoundError:
     
         pass
