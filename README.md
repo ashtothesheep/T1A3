@@ -4,7 +4,7 @@ Terminal Application
 ---
 ## References
 
-## [Source Control](/src/Control)
+## [Source Control](/srcs/Control)
 
 ## Information about knitting and explanations
 
