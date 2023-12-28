@@ -65,15 +65,29 @@ def enter_pattern():
         'Needle Sizes':[needles],
         'Category': [category]
     }
-    
+    df = pd.DataFrame(columns=['Name', 'Designer', 'Yarn Weight', 'Meterage', 'Gauge', 'Needle Sizes', 'Category'])
     try:
-        df = pd.read_csv("docs/Patterns.csv")
-    except FileNotFoundError:
-        df = df.DataFrame(columns=['Name', 'Designer', 'Yarn Weight', 'Meterage', 'Gauge', 'Needle Sizes', 'Category'])
-        df = df.append(pd.DataFrame(new_pattern), ignore_index=True)
+        df_existing = pd.read_csv("docs/Patterns.csv")
+        
+        # Convert the new pattern data to a DataFrame
+        df_new_pattern = pd.DataFrame(new_pattern)
+        try:
+            df_existing = pd.read_csv("docs/Patterns.csv")
+        except FileNotFoundError:
+            df_existing = pd.DataFrame(columns=['Name', 'Designer', 'Yarn Weight', 'Meterage', 'Gauge', 'Needle Sizes', 'Category'])
 
-    # Save the updated DataFrame back to the CSV file
-    df.to_csv("docs/Patterns.csv", index=False, encoding="utf-8")
+        df_new_pattern = pd.DataFrame(new_pattern)
+
+        df = pd.concat([df_existing, df_new_pattern], ignore_index=True)
+
+        df.to_csv("docs/Patterns.csv", index=False)
+        
+    except FileNotFoundError:
+    
+        pass
+    
+    #save file
+        df.to_csv("docs/Patterns.csv", index=False)
 
     print("Pattern added successfully!")
 
