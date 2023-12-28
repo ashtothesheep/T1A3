@@ -1,6 +1,6 @@
 print("Welcome to knitting app!")
 
-
+import pandas as pd
 # menu for launch, provides structure
 def create_menu():
     print("1. View pattern database")
@@ -17,11 +17,10 @@ def create_menu():
 def patterns():
     print("Viewing pattern database:")
 
-    import pandas as pd
-
     df = pd.read_csv("docs/Patterns.csv", encoding="utf-8")
     print(df.to_string())
 
+#definition for option 2
 def yarn_stash():
     print("Viewing yarn stash database:")
     yarn_dictionary = {
@@ -43,6 +42,41 @@ def yarn_stash():
         # Print each row of the yarn stash, number indicates column widths
         print("{:<20} {:<20} {:<20} {:<20}".format(name, color, yarn_type, fibre))
 
+#definition for option 3
+
+def enter_pattern():
+    print("Entering new pattern to database: ")
+    
+    #user input
+    name = input("Enter the pattern name: ")
+    designer = input("Enter the designers name: ")
+    yarn_weight = input("Enter yarn weight required: ")
+    meterage = input ("Enter meterage required: ")
+    gauge = input("Enter pattern gauge: ")
+    needles = input("Enter needles required: ")
+    category = input("Enter pattern category: ")
+    
+    new_pattern = {
+        'Name': [name],
+        'Designer': [designer],
+        'Yarn Weight': [yarn_weight],
+        'Meterage': [meterage],
+        'Gauge':[gauge],
+        'Needle Sizes':[needles],
+        'Category': [category]
+    }
+    
+    try:
+        df = pd.read_csv("docs/Patterns.csv")
+    except FileNotFoundError:
+        df = df.DataFrame(columns=['Name', 'Designer', 'Yarn Weight', 'Meterage', 'Gauge', 'Needle Sizes', 'Category'])
+        df = df.append(pd.DataFrame(new_pattern), ignore_index=True)
+
+    # Save the updated DataFrame back to the CSV file
+    df.to_csv("docs/Patterns.csv", index=False, encoding="utf-8")
+
+    print("Pattern added successfully!")
+
 
 # main script
 users_choice = ""
@@ -63,22 +97,10 @@ while users_choice != "6":
         tools()
     elif users_choice == "6":
         break
-    
-    print("invalid selection, please choose a valid number")
         
 print("Exiting Application...")
         
 
-
-
-# Placeholder for other functions (yarn_stash(), enter_pattern(), enter_yarn(), tools()) as well
-
-
-
-def enter_pattern():
-    print("Entering new pattern:")
-    # Implement the code to allow the user to enter a new pattern
-    print("Placeholder for entering new pattern")
 
 
 def enter_yarn():

@@ -39,3 +39,6 @@ Terminal Application
  - Resources
  https://www.geeksforgeeks.org/load-csv-data-into-list-and-dictionary-using-python/
  https://www.w3schools.com/python/pandas/pandas_getting_started.asp
+ \http://introtopython.org/terminal_apps.html
+ 
+ https://realpython.com/python-typer-cli/
