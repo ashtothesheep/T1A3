@@ -118,3 +118,7 @@ Explanation for non-knitters:
  https://www.w3schools.com/python/python_try_except.asp
  https://docs.pytest.org/en/7.4.x/
  https://typer.tiangolo.com/
+ https://peps.python.org/pep-0008/
+ https://www.geeksforgeeks.org/inserting-data-into-a-new-column-of-an-already-existing-table-in-mysql-using-python/
+ http://pandas.pydata.org
+https://code.visualstudio.com/docs/python/formatting
