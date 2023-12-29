@@ -29,11 +29,11 @@ def yarn_stash(yarn_dictionary):
     # Print header
     print("{:<20} {:<20} {:<20} {:<20}".format("name", "color", "type", "fibre"))
 
-    for i in range(len(yarn_dictionary["name"])):
-        name = yarn_dictionary["name"][i]
-        color = yarn_dictionary["color"][i]
-        yarn_type = yarn_dictionary["type"][i]
-        fibre = yarn_dictionary["fibre"][i]
+    for i in range(len(yarn_dictionary["Name"])):
+        name = yarn_dictionary["Name"][i]
+        color = yarn_dictionary["Color"][i]
+        yarn_type = yarn_dictionary["Yarn Weight"][i]
+        fibre = yarn_dictionary["Fibre"][i]
 
         # Print each row of the yarn stash, number indicates column widths
         print("{:<20} {:<20} {:<20} {:<20}".format(name, color, yarn_type, fibre))
@@ -114,7 +114,7 @@ def enter_pattern():
 
 def enter_yarn(yarn_dictionary):
     print("Entering new yarn to stash: ")
-    attributes = ["name", "color", "type", "fibre"]
+    attributes = ["Name", "Color", "Yarn Weight", "Fibre"]
     new_yarn = {}
     for attribute in attributes:
         new_yarn[attribute] = input("Enter the yarn {}: ".format(attribute))
@@ -160,6 +160,9 @@ def yarn_match(yarn_dictionary):
         print("Matching yarn(s) found:")
         for yarn in matching_yarns:
             print(yarn)
+            
+######################################################################################################################################
+
 #############main script##############################################################################################################
 ######################################################################################################################################
 ######################################################################################################################################
