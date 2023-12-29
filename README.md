@@ -61,7 +61,9 @@ Explanation for non-knitters:
 - [x] Make yarn meterage calculator
 - [x] Create what can i make function based on stock of patterns and yarn
 
-
+# Screenshots of project management and testing
+ Can be found under the docs folder.
+ 
 ## Help
  - Installation Steps
     1. Clone the repository:
@@ -122,3 +124,4 @@ Explanation for non-knitters:
  https://www.geeksforgeeks.org/inserting-data-into-a-new-column-of-an-already-existing-table-in-mysql-using-python/
  http://pandas.pydata.org
 https://code.visualstudio.com/docs/python/formatting
+Monday.com
