@@ -162,7 +162,17 @@ def yarn_match(yarn_dictionary):
             print(yarn)
             
 ######################################################################################################################################
-
+def yarn_calculator():
+    print("Calculating yarn meterage: ")
+    
+    yarn_gramms = float(input("Enter weight of skein/ball: "))
+    yarn_meterage = float(input("Yarn meterage per skein/ball: "))
+    total_qnty = float(input("Enter total quantity in gramms: "))
+    
+    total_meterage = total_qnty * (yarn_meterage / yarn_gramms)
+    
+    print(f"The total meterage in stash is {total_meterage} meters")
+    
 #############main script##############################################################################################################
 ######################################################################################################################################
 ######################################################################################################################################
@@ -217,6 +227,7 @@ while users_choice != "6":
             if tools_choice == "1":
                 yarn_match(yarn_dictionary)
             elif tools_choice == "2":
+                yarn_calculator()
                 pass
             elif tools_choice == "3":   
                 pass
