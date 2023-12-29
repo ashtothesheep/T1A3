@@ -8,7 +8,7 @@ Terminal application designed as a knitting companion, including a database for 
 Includes some basic tools to match things and do calculations
 
 
-## [Source Control](/srcs/Control)
+## [Source Control](https://github.com/ashtothesheep/T1A3)
 
 ## Information about knitting and explanations
 
@@ -24,9 +24,9 @@ Explanation for non-knitters:
 ## Features
 
 1. Adding yarn and patterns to database
-2. View patterns and sort through relevant via filters
+2. View patterns and yarn database
 3. Ability to match yarn from stash to patterns available
-4. Project section, has gauge calculator and a row counter
+4. Tools to make suggestions of what to make and meterage calculator
 
 ## Implementation Plan
 
@@ -64,17 +64,43 @@ Explanation for non-knitters:
 
 ## Help
  - Installation Steps
- pip3 install pandas
-
- - Dependencies
+    1. Clone the repository:
+    ssh
+    git clone https://github.com/ashtothesheep/T1A3 
+    2. Install requirements found below
 
  - Requirements
- pandas 
+    black==23.12.1
+    click==8.1.7
+    colorama==0.4.6
+    exceptiongroup==1.2.0
+    iniconfig==2.0.0
+    markdown-it-py==3.0.0
+    mdurl==0.1.2
+    mypy-extensions==1.0.0
+    numpy==1.26.2
+    packaging==23.2
+    pandas==2.1.4
+    pathspec==0.12.1
+    platformdirs==4.1.0
+    pluggy==1.3.0
+    Pygments==2.17.2
+    pytest==7.4.3
+    python-dateutil==2.8.2
+    pytz==2023.3.post1
+    rich==13.7.0
+    shellingham==1.5.4
+    six==1.16.0
+    tomli==2.0.1
+    typer==0.9.0
+    typing_extensions==4.9.0
+    tzdata==2023.3
 
 
- - Command lines
 
- - Resources
+ ## Command lines
+
+ ## Resources
  https://www.geeksforgeeks.org/load-csv-data-into-list-and-dictionary-using-python/
  https://www.w3schools.com/python/pandas/pandas_getting_started.asp
  \http://introtopython.org/terminal_apps.html
