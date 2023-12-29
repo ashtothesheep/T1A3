@@ -33,6 +33,8 @@ Terminal Application
  - Dependencies
 
  - Requirements
+ pandas 
+
 
  - Command lines
 
@@ -42,3 +44,5 @@ Terminal Application
  \http://introtopython.org/terminal_apps.html
  
  https://realpython.com/python-typer-cli/
+
+ used black to reformat the code to follow styling guide
