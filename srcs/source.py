@@ -172,7 +172,30 @@ def yarn_calculator():
     total_meterage = total_qnty * (yarn_meterage / yarn_gramms)
     
     print(f"The total meterage in stash is {total_meterage} meters")
+
+######################################################################################################################################
+def what_can_i_make(yarn_dictionary):
+    print("What can I make?")
+    project_type = input("Enter project category you want to make: ")
     
+    patterns_df = pd.read_csv("docs/Patterns.csv", encoding="utf-8")
+    
+    matching_patterns = patterns_df[patterns_df["Category"] == project_type]
+    if matching_patterns.empty:
+        print("No matching patterns found. Browse Ravelry!")
+        return
+
+    for index, pattern in matching_patterns.iterrows():
+        matching_yarns = []
+        for i in range(len(yarn_dictionary["Name"])): 
+            if yarn_dictionary["Yarn Weight"][i] == pattern["Yarn Weight"]:
+                matching_yarns.append(yarn_dictionary["Name"][i])
+        if matching_yarns:
+            print(f"Suggested pattern: {pattern['Name']}")
+            print("Matching yarn(s) from stash:")
+            for yarn in matching_yarns:
+                print(yarn)
+                break
 #############main script##############################################################################################################
 ######################################################################################################################################
 ######################################################################################################################################
@@ -229,7 +252,8 @@ while users_choice != "6":
             elif tools_choice == "2":
                 yarn_calculator()
                 pass
-            elif tools_choice == "3":   
+            elif tools_choice == "3":  
+                what_can_i_make(yarn_dictionary) 
                 pass
             elif tools_choice == "4":   
                 pass
