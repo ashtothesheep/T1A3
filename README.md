@@ -1,6 +1,6 @@
 # T1A3 Terminal Application
 
-Terminal Application
+Terminal Application for T1A3 Assignment, CoderAcademy 2023. 
 ---
 ## Description and usage
 
@@ -100,14 +100,21 @@ Explanation for non-knitters:
 
  ## Command lines
 
+ To start the application, the source.py file needs to be run. 
+ The application starts off with the main menu. To navigate the main menu you can enter the corresponding number of the options and press 'Enter'. 
+
+ Ex. For Option 1 --> View pattern database , you need to press '1' in the Command line and press 'Enter'. 
+
+ The main menu will cycle back up after selecting an option, with the exception of the Tools sub-menu. 
+ 
+ When adding a pattern or a yarn type, the application will run you through all the inputs needed to update the databases as you go. 
+
+
  ## Resources
  https://www.geeksforgeeks.org/load-csv-data-into-list-and-dictionary-using-python/
  https://www.w3schools.com/python/pandas/pandas_getting_started.asp
- \http://introtopython.org/terminal_apps.html
- 
+ http://introtopython.org/terminal_apps.html
  https://realpython.com/python-typer-cli/
-
- used black to reformat the code to follow styling guide
  https://www.w3schools.com/python/python_try_except.asp
  https://docs.pytest.org/en/7.4.x/
  https://typer.tiangolo.com/
