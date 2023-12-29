@@ -20,15 +20,10 @@ def patterns():
     df = pd.read_csv("docs/Patterns.csv", encoding="utf-8")
     print(df.to_string())
 
+
 #definition for option 2
-def yarn_stash():
+def yarn_stash(yarn_dictionary):
     print("Viewing yarn stash database:")
-    yarn_dictionary = {
-        'name': ['Tweedy', 'Herriot', 'Falklands Merino', 'Alpaca DK', 'Malabrigo Sock', 'Air'],
-        'color': ['tweedy', '1073', 'heartfelt', 'fawn', 'irradiant', 'beige'],
-        'type': ['8ply', '8ply', '8ply', '4ply', '4ply', '8ply'],
-        'fibre': ['wool', 'alpaca', 'wool', 'alpaca', 'wool blend', 'acrylic']
-    }
     # Print header
     print("{:<20} {:<20} {:<20} {:<20}".format('name', 'color', 'type', 'fibre'))
 
@@ -41,7 +36,7 @@ def yarn_stash():
 
         # Print each row of the yarn stash, number indicates column widths
         print("{:<20} {:<20} {:<20} {:<20}".format(name, color, yarn_type, fibre))
-
+    return yarn_dictionary
 #definition for option 3
 
 def enter_pattern():
@@ -92,8 +87,30 @@ def enter_pattern():
 
     print("Pattern added successfully!")
 
+#entering new yarn to stash
+
+def enter_yarn(yarn_dictionary):
+
+    print("Entering new yarn to stash: ")
+    attributes = ['name', 'color', 'type', 'fibre']
+    new_yarn = {}
+    for attribute in attributes:
+        new_yarn[attribute] = input("Enter the yarn {}: ".format(attribute))
+        
+    for key, value in new_yarn.items():
+        yarn_dictionary[key].append(value)
+    print("Yarn added successfully!")
+    return yarn_dictionary
+
 
 # main script
+
+yarn_dictionary = {
+        'name': ['Tweedy', 'Herriot', 'Falklands Merino', 'Alpaca DK', 'Malabrigo Sock', 'Air'],
+        'color': ['tweedy', '1073', 'heartfelt', 'fawn', 'irradiant', 'beige'],
+        'type': ['8ply', '8ply', '8ply', '4ply', '4ply', '8ply'],
+        'fibre': ['wool', 'alpaca', 'wool', 'alpaca', 'wool blend', 'acrylic']
+    }
 users_choice = ""
 
 while users_choice != "6":
@@ -103,11 +120,11 @@ while users_choice != "6":
     if users_choice == "1":
         patterns()
     elif users_choice == "2":
-        yarn_stash()
+        yarn_stash(yarn_dictionary)
     elif users_choice == "3":
         enter_pattern()
     elif users_choice == "4":
-        enter_yarn()
+        yarn_dictionary = enter_yarn(yarn_dictionary)
     elif users_choice == "5":
         tools()
     elif users_choice == "6":
@@ -117,11 +134,6 @@ print("Exiting Application...")
         
 
 
-
-def enter_yarn():
-    print("Entering new yarn:")
-    # Implement the code to allow the user to enter a new yarn
-    print("Placeholder for entering new yarn")
 
 
 def tools():
